@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bluetooth"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_ser_ble"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_ble_progress">
+
+            <ProgressBar
+                android:id="@+id/progress_ser_bluetooth"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:indeterminateDrawable="@drawable/rotate_progressbar"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_ser_ble_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_ble_on" />
+
+        <TextView
+            android:id="@+id/tv_ser_ble_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/shower_str12"
+            android:textColor="@color/light_blue"
+            android:textSize="15sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_ser_bind_status"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_ser_ble"
+            android:text="@string/shower_str5"
+            android:textColor="@color/light_blue"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/ble_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_bluetooth"
+        android:layout_marginTop="10dp"
+        android:divider="#cccccc"
+        android:dividerHeight="1px" />
+
+    <LinearLayout
+        android:id="@+id/opera_view"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:layout_below="@id/rl_bluetooth"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+<!--        <Button-->
+<!--            android:id="@+id/btnRead"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="读数据"-->
+<!--            />-->
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:text=""
+                android:id="@+id/et_write"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                />
+<!--            <Button-->
+<!--                android:id="@+id/btnWrite"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="写入"-->
+<!--                />-->
+        </LinearLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/tv_response"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="设备返回："-->
+<!--            />-->
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/anjianlingmindu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="按键灵敏度">
+
+                </TextView>
+                <EditText
+                    android:id="@+id/et_lingmindu"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_weight="1.0"
+                    />
+                <Button
+                    android:onClick="lingmindu"
+                    android:id="@+id/btnlingmindu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="调节"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/dianjiyuzhi"
+                android:layout_below="@+id/anjianlingmindu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="电机阈值">
+
+                </TextView>
+                <EditText
+                    android:id="@+id/et_yuzhi"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_weight="1.0"
+                    />
+                <Button
+                    android:onClick="yuzhi"
+                    android:id="@+id/btnyuzhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="调节"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/pid"
+                android:layout_below="@+id/dianjiyuzhi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="PID灵敏度">
+
+
+                </TextView>
+                <EditText
+
+                    android:id="@+id/et_pid"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_weight="1.0"
+                    />
+                <Button
+                    android:onClick="pid"
+                    android:id="@+id/btnpid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="调节"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/dianliu"
+                android:layout_below="@+id/pid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="电机堵转电流">
+
+
+                </TextView>
+                <EditText
+
+                    android:id="@+id/et_dianliu"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_weight="1.0"
+                    />
+                <Button
+                    android:onClick="dianliu"
+                    android:id="@+id/btndianliu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="调节"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

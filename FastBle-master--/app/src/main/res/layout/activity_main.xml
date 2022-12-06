@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/app_name"
+        app:titleTextColor="@android:color/white" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+<LinearLayout
+    android:gravity="center"
+    android:layout_below="@+id/PIDlingmindu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_scan" />
+    <EditText
+        android:id="@+id/name"
+        android:text="WATER_FFAC"
+        android:layout_width="0px"
+        android:layout_height="0px">
+    </EditText>
+    <EditText
+        android:id="@+id/uuid"
+        android:text=""
+        android:layout_width="0px"
+        android:layout_height="0px">
+    </EditText>
+    <ImageView
+        android:id="@+id/img_loading"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_loading"
+        android:visibility="invisible" />
+</LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/anjianlingmindu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200px"
+                android:layout_height="wrap_content"
+                android:text="按键灵敏度">
+
+            </TextView>
+            <EditText
+                android:id="@+id/et_lingmindu"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_weight="1.0"
+                />
+            <Button
+                android:onClick="lingmindu"
+                android:id="@+id/btnlingmindu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调节"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/dianjiyuzhi"
+            android:layout_below="@+id/anjianlingmindu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200px"
+                android:layout_height="wrap_content"
+                android:text="电机阈值">
+
+            </TextView>
+            <EditText
+
+                android:id="@+id/et_pid"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_weight="1.0"
+                />
+            <Button
+                android:onClick="pid"
+                android:id="@+id/btnpid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调节"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PIDlingmindu"
+            android:layout_below="@+id/dianjiyuzhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200px"
+                android:layout_height="wrap_content"
+                android:text="PID灵敏度">
+
+            </TextView>
+            <EditText
+                android:id="@+id/et_yuzhi"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_weight="1.0"
+                />
+            <Button
+                android:onClick="yuzhi"
+                android:id="@+id/btnyuzhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调节"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:scrollbars="none" />
+
+
+</LinearLayout>
+
